@@ -98,6 +98,6 @@ object tuttifrutti {
 		saborActual = sabores.get(vecesMordido)
 	}
 	method gusto() = saborActual  
-	method libreGluten() = if (tieneGluten==null) self.error("Ingrese si tiene/no tiene gluten") else tieneGluten
+	method libreGluten() = if (tieneGluten==null) self.error("Ingrese si *tuttifrutti* tiene/no tiene gluten") else tieneGluten
 }
 
