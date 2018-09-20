@@ -4,7 +4,7 @@ import golosinas.*
 describe "Tests Juliana" {
 
 	var golosinasDeseadas = #{ alfajor, bombon, chocolatin, chupetin }
-	var gustosDeseados = #{ "Chocolate", "Menta", "Vainilla" }
+	var gustosDeseados = #{ "Melón", "Chocolate", "Frutilla", "Vainilla" }
 	
 /* FIXTURE:
 Cuando se requiere realizar previo a cada test otras acciones de configuración de la 
@@ -15,9 +15,10 @@ de manera similar a los constructores de las clases. Se especifica luego de la d
 inicialización de variables y previo a los tests.
 */
 	fixture {
-		mariano.comprar(oblea)
-		mariano.comprar(bombon)
 		mariano.comprar(chocolatin)
+		mariano.comprar(caramelo)
+		mariano.comprar(bombon)
+		mariano.comprar(oblea)
 	}
 
 	test "golosinas faltantes" {
@@ -25,7 +26,7 @@ inicialización de variables y previo a los tests.
 	}
 
 	test "gustos faltantes" {
-		assert.equals(#{ "Menta" }, mariano.gustosFaltantes(gustosDeseados))
+		assert.equals(#{ "Melón" }, mariano.gustosFaltantes(gustosDeseados))
 	}
 
 }
