@@ -1,3 +1,5 @@
+import golosinas.*
+
 object mariano {
 /*
 * `comprar(unaGolosina)` : agrega una golosina a la bolsa de golosinas compradas.
@@ -24,14 +26,30 @@ la suma del peso de cada golosina.
  */
  	const golosinas = []
  	
+ 	method golosinas() = golosinas
+ 	
 	method comprar(unaGolosina) { golosinas.add(unaGolosina) }
-	method desechar(unaGolosina) { golosinas.remove(unaGolosina) }
-	method probarGolosinas() { golosinas.forEach{ golosina => golosina.mordisco()} }
-	method golosinas() {
-		/* cambiar por la implementacion correcta */ 
-		return [] 
-	}
 	
-
+	method desechar(unaGolosina) { golosinas.remove(unaGolosina) }
+	
+	method probarGolosinas() { golosinas.forEach{ golosina => golosina.mordisco()} }
+	
+	method hayGolosinaSinTacc() = golosinas.any{ golosina => golosina.libreGluten() } 
+	
+	method preciosCuidados() = golosinas.all{ golosina => golosina.precio() <= 10 } 
+	
+	method golosinasDeSabor(unSabor) = golosinas.filter{ golosina => golosina.gusto() == unSabor }
+	
+	method sabores() = golosinas.map{ golosina => golosina.gusto() }.asSet()	
+	
+	method golosinaMasCara() = if (golosinas.isEmpty()) self.error("La lista de golosinas no puede estar vacia")
+							   else golosinas.max{ golosina => golosina.precio() }
+							   
+	method pesoGolosinas() = golosinas.sum{ golosina => golosina.peso() }
+	
+	method golosinasFaltantes(golosinasDeseadas) = golosinasDeseadas.difference(golosinas.asSet())
+	
+	method gustosFaltantes(gustosDeseados) = gustosDeseados.difference(self.sabores())
+	
 }
 

@@ -1,0 +1,31 @@
+import mariano.*
+import golosinas.*
+
+describe "Tests Juliana" {
+
+	var golosinasDeseadas = #{ alfajor, bombon, chocolatin, chupetin }
+	var gustosDeseados = #{ "Chocolate", "Menta", "Vainilla" }
+	
+/* FIXTURE:
+Cuando se requiere realizar previo a cada test otras acciones de configuración de la 
+situación inicial más complejas, para las cuales no es suficiente la inicialización de variables,
+se puede definir un fixture. Se lo hace precisamente con la palabra reservada fixture, 
+sin agregar identificador y luego entre { } se detalla la secuencia de mensajes que se necesite, 
+de manera similar a los constructores de las clases. Se especifica luego de la declaración e 
+inicialización de variables y previo a los tests.
+*/
+	fixture {
+		mariano.comprar(oblea)
+		mariano.comprar(bombon)
+		mariano.comprar(chocolatin)
+	}
+
+	test "golosinas faltantes" {
+		assert.equals(#{ alfajor, chupetin }, mariano.golosinasFaltantes(golosinasDeseadas))
+	}
+
+	test "gustos faltantes" {
+		assert.equals(#{ "Menta" }, mariano.gustosFaltantes(gustosDeseados))
+	}
+
+}
