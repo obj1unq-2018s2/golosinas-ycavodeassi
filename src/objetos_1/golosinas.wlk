@@ -64,7 +64,7 @@ object chocolatin {
 		pesoActual = cuanto
 	}
 	method peso() = pesoActual
-	method mordisco() { pesoActual -= 2 }
+	method mordisco() { pesoActual = (pesoActual - 2).max(0) }
 	method gusto() = "Chocolate"
 	method libreGluten() = false
 }
