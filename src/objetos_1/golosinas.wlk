@@ -1,6 +1,6 @@
 //El peso de las golosinas se denota en gramos. 
 
-object bombon {
+class Bombones {
 	var peso = 15
 	
 	method precio() = 5
@@ -10,7 +10,7 @@ object bombon {
 	method libreGluten() = true
 }
 
-object alfajor {
+class Alfajores {
 	var peso = 300
 	
 	method precio() = 12
@@ -20,7 +20,7 @@ object alfajor {
 	method libreGluten() = false
 }
 
-object caramelo {
+class Caramelos {
 	var peso = 5
 	
 	method precio() = 1
@@ -30,7 +30,7 @@ object caramelo {
 	method libreGluten() = true 
 }
 
-object chupetin {
+class Chupetines {
 	var peso = 7
 	
 	method precio() = 2
@@ -40,7 +40,7 @@ object chupetin {
 	method libreGluten() = true 
 }
 
-object oblea {
+class Obleas {
 	var peso = 250
 	
 	method precio() = 5
@@ -50,7 +50,7 @@ object oblea {
 	method libreGluten() = false 
 }
 
-object chocolatin {
+class Chocolatines {
 	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
 	// el precio se calcula a partir del precio inicial
 	// el mordisco afecta al peso actual
@@ -69,7 +69,7 @@ object chocolatin {
 	method libreGluten() = false
 }
 
-object golosinaBaniada {
+class GolosinasBaniadas {
 	var golosinaInterior
 	var pesoBanio = 4
 	
@@ -84,7 +84,7 @@ object golosinaBaniada {
 	method libreGluten() = golosinaInterior.libreGluten()	
 }
 
-object tuttifrutti {
+class Tuttifruttis {
 	const sabores = ["Frutilla", "Chocolate", "Naranja"]
 	var vecesMordido = 0
 	var saborActual = sabores.get(vecesMordido)

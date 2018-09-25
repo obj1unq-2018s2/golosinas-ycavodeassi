@@ -2,9 +2,13 @@ import golosinas.*
 
 describe "Test de Golosinas" {
 
-	fixture {
-		chocolatin.pesoInicial(100)
-	}
+	const chocolatin = new Chocolatines(pesoInicial=100, pesoActual=100)
+	const alfajor = new Alfajores()
+	const caramelo = new Caramelos()
+	const chupetin = new Chupetines()
+	const oblea = new Obleas()
+	const tuttifrutti = new Tuttifruttis()
+	const golosinaBaniada = new GolosinasBaniadas()
 
 	test "Chocolatin" {
 		assert.equals(100, chocolatin.peso())

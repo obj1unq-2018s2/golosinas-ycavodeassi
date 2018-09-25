@@ -2,7 +2,13 @@ import mariano.*
 import golosinas.*
 
 describe "Tests Juliana" {
-
+	
+	const alfajor = new Alfajores()
+	const bombon = new Bombones()
+	const chocolatin = new Chocolatines()
+	const chupetin = new Chupetines()
+	const caramelo = new Caramelos()
+	const oblea = new Obleas()
 	var golosinasDeseadas = #{ alfajor, bombon, chocolatin, chupetin }
 	var gustosDeseados = #{ "Melón", "Chocolate", "Frutilla", "Vainilla" }
 	
