@@ -47,9 +47,11 @@ la suma del peso de cada golosina.
 							   
 	method pesoGolosinas() = golosinas.sum{ golosina => golosina.peso() }
 	
-	method golosinasFaltantes(golosinasDeseadas) = golosinasDeseadas.difference(golosinas.asSet())
+	method golosinasFaltantes(golosinasDeseadas) = golosinasDeseadas.difference(golosinas)
 	
 	method gustosFaltantes(gustosDeseados) = gustosDeseados.difference(self.sabores())
+	
+	method baniar(unaGolosina) { golosinas.add( new GolosinasBaniadas(golosinaInterior = unaGolosina) ) }
 	
 }
 

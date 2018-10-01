@@ -2,7 +2,12 @@ import golosinas.*
 import mariano.*
 
 describe "tests de mariano" {
-
+	
+	const chocolatin = new Chocolatines()
+	const caramelo = new Caramelos()
+	const bombon = new Bombones()
+	const chupetin = new Chupetines()
+	
 	fixture {
 		chocolatin.pesoInicial(100)
 		mariano.comprar(chocolatin)
@@ -30,6 +35,12 @@ describe "tests de mariano" {
 	
 	test "Golosinas sin Gluten" {
 		assert.equals(true,mariano.hayGolosinaSinTacc())
+	}
+	
+	test "mariano bañar golosina" {
+		mariano.baniar(chocolatin)
+		assert.equals(104,chocolatin.peso())
+		assert.that(mariano.golosinas().contains(chocolatin))
 	}
 	
 }
